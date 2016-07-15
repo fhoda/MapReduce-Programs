@@ -1,0 +1,1 @@
+sqoop import --connect jdbc:mysql://localhost/employees --username root --query 'select employees.emp_no, employees.birth_date, dept_emp.dept_no from employees INNER JOIN dept_emp on (employees.emp_no = dept_emp.emp_no) WHERE $CONDITIONS' --target-dir employees --split-by employees.emp_no
